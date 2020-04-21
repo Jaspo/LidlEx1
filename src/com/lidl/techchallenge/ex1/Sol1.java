@@ -1,6 +1,12 @@
 package com.lidl.techchallenge.ex1;
 
 public class Sol1 implements SolutionI {
+
+    @Override
+    public String getSolutionId() {
+        return "Sol1";
+    }
+
     @Override
     public Res findIndexesThatSum(int[] arr, int sum){
 
@@ -15,5 +21,6 @@ public class Sol1 implements SolutionI {
         }
         return new Res(i, j);
     }
+
 
 }

@@ -4,25 +4,25 @@ import java.util.*;
 
 public class Util {
     public static Random rd =new Random();
-    public static int[] initArray(int n) {
+    public static int[] initArray(int n, boolean singleSolution) {
         int[] arr = new int[n];
         Set<Integer> allSums= new HashSet<>();
         for (int i = 0; i < arr.length;) {
-            int candidate=rd.nextInt();
+            int candidate=rd.nextInt()/2;
             int j=0;
-            boolean allreadyThere=false;
+            boolean alreadyThere=false;
             List<Integer> newSums= new ArrayList<>();
-            while(j<i && !allreadyThere){
+            while(singleSolution && j<i && !alreadyThere){
                 int newSum=arr[j]+candidate;
 
-                if (allSums.contains(newSum)) allreadyThere=true;
+                if (allSums.contains(newSum)) alreadyThere=true;
                 else {
                     newSums.add(newSum);
                     j++;
                 }
 
             }
-            if (!allreadyThere) {
+            if (!singleSolution || !alreadyThere) {
                 arr[i] = candidate;
                 allSums.addAll(newSums);
                 i++;

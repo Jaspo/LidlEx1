@@ -2,14 +2,13 @@ package com.lidl.techchallenge.ex1;
 
 
 public class Statement {
-    private final static int N = 20;
     private int[] arr;
 
     public int[] getArr(){
         return arr;
     }
-    public Statement() {
-        arr = Util.initArray(N);
+    public Statement(int N,boolean singleSolution) {
+        arr = Util.initArray(N,singleSolution);
     }
     public SolutionI.Res getRandomRes(){
         return new SolutionI.Res(Util.getRandomIndex(arr),Util.getRandomIndex(arr));

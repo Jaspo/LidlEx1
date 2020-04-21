@@ -3,6 +3,12 @@ package com.lidl.techchallenge.ex1;
 import java.util.Arrays;
 
 public class Sol2 implements SolutionI {
+
+    @Override
+    public String getSolutionId() {
+        return "Sol2";
+    }
+
     @Override
     public Res findIndexesThatSum(int[] arrOrig, int sum){
         int[] arr=arrOrig.clone();
@@ -13,7 +19,6 @@ public class Sol2 implements SolutionI {
 
         while(!done){
             j=Arrays.binarySearch(arr, i+1, lastIndex, sum-arr[i]);
-
 
             if (j>=0) done=true;
             else i++;

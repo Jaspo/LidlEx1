@@ -1,8 +1,10 @@
 package com.lidl.techchallenge.ex1;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
-public interface SolutionI {
+public interface SolutionI extends SolutionBase{
     Res findIndexesThatSum(int[] arr, int sum);
 
     class Res{
@@ -36,3 +38,4 @@ public interface SolutionI {
         }
     }
 }
+
